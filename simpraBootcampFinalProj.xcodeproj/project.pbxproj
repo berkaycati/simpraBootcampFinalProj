@@ -9,23 +9,39 @@
 /* Begin PBXBuildFile section */
 		62C47B01297AE51A00DC3BE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C47B00297AE51A00DC3BE5 /* AppDelegate.swift */; };
 		62C47B03297AE51A00DC3BE5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C47B02297AE51A00DC3BE5 /* SceneDelegate.swift */; };
-		62C47B05297AE51A00DC3BE5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C47B04297AE51A00DC3BE5 /* ViewController.swift */; };
+		62C47B05297AE51A00DC3BE5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C47B04297AE51A00DC3BE5 /* MainViewController.swift */; };
 		62C47B08297AE51A00DC3BE5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62C47B06297AE51A00DC3BE5 /* Main.storyboard */; };
 		62C47B0B297AE51A00DC3BE5 /* simpraBootcampFinalProj.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 62C47B09297AE51A00DC3BE5 /* simpraBootcampFinalProj.xcdatamodeld */; };
 		62C47B0D297AE51B00DC3BE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62C47B0C297AE51B00DC3BE5 /* Assets.xcassets */; };
 		62C47B10297AE51B00DC3BE5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62C47B0E297AE51B00DC3BE5 /* LaunchScreen.storyboard */; };
+		62C47B19297AE53D00DC3BE5 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 62C47B18297AE53D00DC3BE5 /* Alamofire */; };
+		62C47B1C297AE55900DC3BE5 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 62C47B1B297AE55900DC3BE5 /* Kingfisher */; };
+		62C47B25297C016900DC3BE5 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C47B24297C016900DC3BE5 /* Services.swift */; };
+		62C47B27297C0ED600DC3BE5 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C47B26297C0ED600DC3BE5 /* MainModel.swift */; };
+		62C47B29297C0F0800DC3BE5 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C47B28297C0F0800DC3BE5 /* MainViewModel.swift */; };
+		62C47B30297C153300DC3BE5 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C47B2E297C153300DC3BE5 /* MainTableViewCell.swift */; };
+		62C47B31297C153300DC3BE5 /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62C47B2F297C153300DC3BE5 /* MainTableViewCell.xib */; };
+		62C47B33297C188700DC3BE5 /* MainTableViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C47B32297C188700DC3BE5 /* MainTableViewHelper.swift */; };
+		62C47B35297C23E400DC3BE5 /* EntitiyProblem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C47B34297C23E400DC3BE5 /* EntitiyProblem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		62C47AFD297AE51A00DC3BE5 /* simpraBootcampFinalProj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = simpraBootcampFinalProj.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		62C47B00297AE51A00DC3BE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		62C47B02297AE51A00DC3BE5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		62C47B04297AE51A00DC3BE5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		62C47B04297AE51A00DC3BE5 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		62C47B07297AE51A00DC3BE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		62C47B0A297AE51A00DC3BE5 /* simpraBootcampFinalProj.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = simpraBootcampFinalProj.xcdatamodel; sourceTree = "<group>"; };
 		62C47B0C297AE51B00DC3BE5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		62C47B0F297AE51B00DC3BE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		62C47B11297AE51B00DC3BE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		62C47B24297C016900DC3BE5 /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
+		62C47B26297C0ED600DC3BE5 /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
+		62C47B28297C0F0800DC3BE5 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		62C47B2E297C153300DC3BE5 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		62C47B2F297C153300DC3BE5 /* MainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
+		62C47B32297C188700DC3BE5 /* MainTableViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewHelper.swift; sourceTree = "<group>"; };
+		62C47B34297C23E400DC3BE5 /* EntitiyProblem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntitiyProblem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +49,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62C47B1C297AE55900DC3BE5 /* Kingfisher in Frameworks */,
+				62C47B19297AE53D00DC3BE5 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,9 +76,8 @@
 		62C47AFF297AE51A00DC3BE5 /* simpraBootcampFinalProj */ = {
 			isa = PBXGroup;
 			children = (
-				62C47B00297AE51A00DC3BE5 /* AppDelegate.swift */,
-				62C47B02297AE51A00DC3BE5 /* SceneDelegate.swift */,
-				62C47B04297AE51A00DC3BE5 /* ViewController.swift */,
+				62C47B23297BFFD000DC3BE5 /* Delegates */,
+				62C47B1D297BFE9B00DC3BE5 /* MVVM */,
 				62C47B06297AE51A00DC3BE5 /* Main.storyboard */,
 				62C47B0C297AE51B00DC3BE5 /* Assets.xcassets */,
 				62C47B0E297AE51B00DC3BE5 /* LaunchScreen.storyboard */,
@@ -68,6 +85,70 @@
 				62C47B09297AE51A00DC3BE5 /* simpraBootcampFinalProj.xcdatamodeld */,
 			);
 			path = simpraBootcampFinalProj;
+			sourceTree = "<group>";
+		};
+		62C47B1D297BFE9B00DC3BE5 /* MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				62C47B1E297BFEBC00DC3BE5 /* Main Screen */,
+				62C47B1F297BFECF00DC3BE5 /* Detail Screen */,
+				62C47B20297BFF0E00DC3BE5 /* Liked Screen */,
+				62C47B21297BFF2900DC3BE5 /* Noted Screen */,
+				62C47B22297BFF4B00DC3BE5 /* Add Note Screen */,
+			);
+			path = MVVM;
+			sourceTree = "<group>";
+		};
+		62C47B1E297BFEBC00DC3BE5 /* Main Screen */ = {
+			isa = PBXGroup;
+			children = (
+				62C47B26297C0ED600DC3BE5 /* MainModel.swift */,
+				62C47B28297C0F0800DC3BE5 /* MainViewModel.swift */,
+				62C47B04297AE51A00DC3BE5 /* MainViewController.swift */,
+				62C47B2E297C153300DC3BE5 /* MainTableViewCell.swift */,
+				62C47B2F297C153300DC3BE5 /* MainTableViewCell.xib */,
+				62C47B24297C016900DC3BE5 /* Services.swift */,
+				62C47B32297C188700DC3BE5 /* MainTableViewHelper.swift */,
+			);
+			path = "Main Screen";
+			sourceTree = "<group>";
+		};
+		62C47B1F297BFECF00DC3BE5 /* Detail Screen */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Detail Screen";
+			sourceTree = "<group>";
+		};
+		62C47B20297BFF0E00DC3BE5 /* Liked Screen */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Liked Screen";
+			sourceTree = "<group>";
+		};
+		62C47B21297BFF2900DC3BE5 /* Noted Screen */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Noted Screen";
+			sourceTree = "<group>";
+		};
+		62C47B22297BFF4B00DC3BE5 /* Add Note Screen */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Add Note Screen";
+			sourceTree = "<group>";
+		};
+		62C47B23297BFFD000DC3BE5 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				62C47B02297AE51A00DC3BE5 /* SceneDelegate.swift */,
+				62C47B00297AE51A00DC3BE5 /* AppDelegate.swift */,
+				62C47B34297C23E400DC3BE5 /* EntitiyProblem.swift */,
+			);
+			path = Delegates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -86,6 +167,10 @@
 			dependencies = (
 			);
 			name = simpraBootcampFinalProj;
+			packageProductDependencies = (
+				62C47B18297AE53D00DC3BE5 /* Alamofire */,
+				62C47B1B297AE55900DC3BE5 /* Kingfisher */,
+			);
 			productName = simpraBootcampFinalProj;
 			productReference = 62C47AFD297AE51A00DC3BE5 /* simpraBootcampFinalProj.app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +199,10 @@
 				Base,
 			);
 			mainGroup = 62C47AF4297AE51A00DC3BE5;
+			packageReferences = (
+				62C47B17297AE53D00DC3BE5 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				62C47B1A297AE55900DC3BE5 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 62C47AFE297AE51A00DC3BE5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -130,6 +219,7 @@
 			files = (
 				62C47B10297AE51B00DC3BE5 /* LaunchScreen.storyboard in Resources */,
 				62C47B0D297AE51B00DC3BE5 /* Assets.xcassets in Resources */,
+				62C47B31297C153300DC3BE5 /* MainTableViewCell.xib in Resources */,
 				62C47B08297AE51A00DC3BE5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -141,10 +231,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				62C47B05297AE51A00DC3BE5 /* ViewController.swift in Sources */,
+				62C47B25297C016900DC3BE5 /* Services.swift in Sources */,
+				62C47B05297AE51A00DC3BE5 /* MainViewController.swift in Sources */,
+				62C47B30297C153300DC3BE5 /* MainTableViewCell.swift in Sources */,
+				62C47B27297C0ED600DC3BE5 /* MainModel.swift in Sources */,
+				62C47B35297C23E400DC3BE5 /* EntitiyProblem.swift in Sources */,
+				62C47B29297C0F0800DC3BE5 /* MainViewModel.swift in Sources */,
 				62C47B01297AE51A00DC3BE5 /* AppDelegate.swift in Sources */,
 				62C47B0B297AE51A00DC3BE5 /* simpraBootcampFinalProj.xcdatamodeld in Sources */,
 				62C47B03297AE51A00DC3BE5 /* SceneDelegate.swift in Sources */,
+				62C47B33297C188700DC3BE5 /* MainTableViewHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,6 +458,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		62C47B17297AE53D00DC3BE5 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		62C47B1A297AE55900DC3BE5 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		62C47B18297AE53D00DC3BE5 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 62C47B17297AE53D00DC3BE5 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		62C47B1B297AE55900DC3BE5 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 62C47B1A297AE55900DC3BE5 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		62C47B09297AE51A00DC3BE5 /* simpraBootcampFinalProj.xcdatamodeld */ = {
