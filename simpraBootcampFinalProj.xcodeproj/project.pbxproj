@@ -24,7 +24,6 @@
 		62C47B30297C153300DC3BE5 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C47B2E297C153300DC3BE5 /* MainTableViewCell.swift */; };
 		62C47B31297C153300DC3BE5 /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62C47B2F297C153300DC3BE5 /* MainTableViewCell.xib */; };
 		62C47B33297C188700DC3BE5 /* MainTableViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C47B32297C188700DC3BE5 /* MainTableViewHelper.swift */; };
-		62C47B35297C23E400DC3BE5 /* EntitiyProblem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C47B34297C23E400DC3BE5 /* EntitiyProblem.swift */; };
 		62C47B37297CB0A800DC3BE5 /* NotedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C47B36297CB0A800DC3BE5 /* NotedModel.swift */; };
 		62C47B39297CB0B500DC3BE5 /* NotedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C47B38297CB0B500DC3BE5 /* NotedViewModel.swift */; };
 		62C47B3B297CB0D400DC3BE5 /* NotedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C47B3A297CB0D400DC3BE5 /* NotedViewController.swift */; };
@@ -53,7 +52,6 @@
 		62C47B2E297C153300DC3BE5 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		62C47B2F297C153300DC3BE5 /* MainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
 		62C47B32297C188700DC3BE5 /* MainTableViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewHelper.swift; sourceTree = "<group>"; };
-		62C47B34297C23E400DC3BE5 /* EntitiyProblem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntitiyProblem.swift; sourceTree = "<group>"; };
 		62C47B36297CB0A800DC3BE5 /* NotedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotedModel.swift; sourceTree = "<group>"; };
 		62C47B38297CB0B500DC3BE5 /* NotedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotedViewModel.swift; sourceTree = "<group>"; };
 		62C47B3A297CB0D400DC3BE5 /* NotedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotedViewController.swift; sourceTree = "<group>"; };
@@ -176,7 +174,6 @@
 			children = (
 				62C47B02297AE51A00DC3BE5 /* SceneDelegate.swift */,
 				62C47B00297AE51A00DC3BE5 /* AppDelegate.swift */,
-				62C47B34297C23E400DC3BE5 /* EntitiyProblem.swift */,
 			);
 			path = Delegates;
 			sourceTree = "<group>";
@@ -276,7 +273,6 @@
 				62C47B30297C153300DC3BE5 /* MainTableViewCell.swift in Sources */,
 				62C84FA8297D800A003CEF97 /* InternetManager.swift in Sources */,
 				62C47B27297C0ED600DC3BE5 /* MainModel.swift in Sources */,
-				62C47B35297C23E400DC3BE5 /* EntitiyProblem.swift in Sources */,
 				629E3DB2297D91E000DD5D62 /* DetailViewModel.swift in Sources */,
 				62C47B39297CB0B500DC3BE5 /* NotedViewModel.swift in Sources */,
 				62C47B29297C0F0800DC3BE5 /* MainViewModel.swift in Sources */,

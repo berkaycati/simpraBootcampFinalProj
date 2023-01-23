@@ -145,7 +145,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" image="note" catalog="system" selectedImage="note.text" id="wWX-5N-mzs"/>
                     <connections>
-                        <outlet property="notedTableView" destination="Trf-5F-Cdc" id="OL8-0j-8mR"/>
+                        <outlet property="notedTableView" destination="Trf-5F-Cdc" id="PeV-um-0t9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0ZT-ov-JIV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

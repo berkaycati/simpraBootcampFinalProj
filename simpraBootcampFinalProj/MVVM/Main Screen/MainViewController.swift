@@ -81,7 +81,6 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as! MainTableViewCell
-        cell.nameLabel.text = items[indexPath.row].name
         cell.configure(with: items[indexPath.row])
         return cell
     }

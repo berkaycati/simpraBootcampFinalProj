@@ -53,11 +53,11 @@ class MainModel {
       let context = appDelegate.persistentContainer.viewContext
       if let entity = NSEntityDescription.entity(forEntityName: "Entity", in: context) {
         let listObject = NSManagedObject(entity: entity, insertInto: context)
-        listObject.setValue(data.name ?? "", forKey: "name")
-        listObject.setValue(data.backgroundImage ?? "", forKey: "backgroundImage")
-        listObject.setValue(data.rating ?? 0, forKey: "rating")
-        listObject.setValue(data.released ?? "", forKey: "released")
-          listObject.setValue(data.id, forKey: "id")
+            listObject.setValue(data.name ?? "", forKey: "name")
+            listObject.setValue(data.backgroundImage ?? "", forKey: "backgroundImage")
+            listObject.setValue(data.rating ?? 0, forKey: "rating")
+            listObject.setValue(data.released ?? "", forKey: "released")
+            listObject.setValue(data.id, forKey: "id")
         
         do {
           try context.save()

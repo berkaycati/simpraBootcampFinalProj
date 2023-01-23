@@ -23,13 +23,14 @@ class MainTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        //setupUI()
+        //
+        setupUI()
     }
 
     
     
     func configure(with model: RowItem) {
-        mainImageView.kf.setImage(with: URL.init(string: model.backgroundImage ?? ""))
+        mainImageView.kf.setImage(with: URL.init(string: model.backgroundImage))
         nameLabel.text = model.name ?? "berkuy"
         ratingLabel.text = "Rating: \(model.rating)"
     }
@@ -47,10 +48,10 @@ private extension MainTableViewCell {
 }
 
 struct MainCellModel {
-    let id: Int?
-    let name, released: String?
-    let backgroundImage: String?
-    let rating: Double?
+    let id: Int
+    let name, released: String
+    let backgroundImage: String
+    let rating: Double
     
     enum CodingKeys: String, CodingKey {
         case id, name, released

@@ -23,12 +23,12 @@ class MainViewModel {
     }
     
     func cellPressed(_ index: Int) {
-        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        if let vc = storyBoard.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController {
-            vc.modalPresentationStyle = .fullScreen
-            DispatchQueue.main.async {
-            }
-        }
+//        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+//        if let vc = storyBoard.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController {
+//            vc.modalPresentationStyle = .fullScreen
+//            DispatchQueue.main.async {
+//            }
+//        }
     }
 }
 
@@ -49,9 +49,9 @@ extension MainViewModel: MainModelProtocol {
         onErrorDetected?("Please Try It Again Later")
     }
     func didCacheDataFetch() {
-        let cellModels: [MainCellModel] = model.data.map{
+        let cellModels: [MainCellModel] = model.databaseData.map{
             .init(
-                id: $0.id ?? 0,
+                id: Int($0.id) ?? 0,
                 name: $0.name ?? "",
                 released: $0.released ?? "",
                 backgroundImage: $0.backgroundImage ?? "",
