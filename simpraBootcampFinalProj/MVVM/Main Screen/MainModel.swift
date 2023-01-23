@@ -45,44 +45,54 @@ class MainModel {
             print("coredatadan çektim")
         }
         
-        
-        
     }
     
     private func saveToCoreData(_ data: Result) {
-      let context = appDelegate.persistentContainer.viewContext
-      if let entity = NSEntityDescription.entity(forEntityName: "Entity", in: context) {
-        let listObject = NSManagedObject(entity: entity, insertInto: context)
-            listObject.setValue(data.name ?? "", forKey: "name")
-            listObject.setValue(data.backgroundImage ?? "", forKey: "backgroundImage")
-            listObject.setValue(data.rating ?? 0, forKey: "rating")
-            listObject.setValue(data.released ?? "", forKey: "released")
-            listObject.setValue(data.id, forKey: "id")
-        
+     
+        let context = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<Entity>(entityName: "Entity")
+        request.predicate = NSPredicate(format: "id = %d", data.id!)
         do {
-          try context.save()
-            print("CoreDataya Kaydettim")
+            let result = try context.fetch(request)
+            if result.count == 0 {
+                if let entity = NSEntityDescription.entity(forEntityName: "Entity", in: context) {
+                    let listObject = NSManagedObject(entity: entity, insertInto: context)
+                    listObject.setValue(data.name ?? "", forKey: "name")
+                    listObject.setValue(data.backgroundImage ?? "", forKey: "backgroundImage")
+                    listObject.setValue(data.rating ?? 0, forKey: "rating")
+                    listObject.setValue(data.released ?? "", forKey: "released")
+                    listObject.setValue(data.id, forKey: "id")
+                    do {
+                        try context.save()
+                        print("CoreDataya Kaydettim")
+                    } catch {
+                        print("ERROR while saving data to CoreData")
+                    }
+                }
+            } else {
+                print("Duplicate data, not saved to CoreData")
+            }
         } catch {
-          print("ERROR while saving data to CoreData")
+            print("Error while fetching data for duplicate check")
         }
-      }
     }
     
+    
     public func retrieveFromCoreData() {
-      let context = appDelegate.persistentContainer.viewContext
-      
-      let request = NSFetchRequest<Entity>(entityName: "Entity")
-      
-      do {
-        let result = try context.fetch(request)
-        print("\(result.count)")
-        self.databaseData = result
-        delegate?.didCacheDataFetch()
-          print("data çekildi")
-      } catch {
-        print("ERROR while fetching data from CoreData")
-        delegate?.didDataCouldntFetch()
-      }
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let request = NSFetchRequest<Entity>(entityName: "Entity")
+        
+        do {
+            let result = try context.fetch(request)
+            print("\(result.count)")
+            self.databaseData = result
+            delegate?.didCacheDataFetch()
+            print("data çekildi")
+        } catch {
+            print("ERROR while fetching data from CoreData")
+            delegate?.didDataCouldntFetch()
+        }
     }
     
 }

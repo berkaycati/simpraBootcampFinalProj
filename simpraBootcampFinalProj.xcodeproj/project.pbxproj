@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		624B9002297F3C7C002218D9 /* NotedLikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624B9001297F3C7C002218D9 /* NotedLikeViewController.swift */; };
+		624B9004297F3D38002218D9 /* NotedLikeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624B9003297F3D38002218D9 /* NotedLikeModel.swift */; };
+		624B9006297F3D45002218D9 /* NotedLikeModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624B9005297F3D45002218D9 /* NotedLikeModelView.swift */; };
+		624B9008297F3F91002218D9 /* AddNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624B9007297F3F91002218D9 /* AddNoteViewController.swift */; };
+		624B900A297F3FC0002218D9 /* AddNoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624B9009297F3FC0002218D9 /* AddNoteModel.swift */; };
+		624B900C297F3FCC002218D9 /* AddNoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624B900B297F3FCC002218D9 /* AddNoteViewModel.swift */; };
 		629E3DB0297D8F0500DD5D62 /* DetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629E3DAF297D8F0500DD5D62 /* DetailModel.swift */; };
 		629E3DB2297D91E000DD5D62 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629E3DB1297D91E000DD5D62 /* DetailViewModel.swift */; };
 		62C47B01297AE51A00DC3BE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C47B00297AE51A00DC3BE5 /* AppDelegate.swift */; };
@@ -35,6 +41,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		624B9001297F3C7C002218D9 /* NotedLikeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotedLikeViewController.swift; sourceTree = "<group>"; };
+		624B9003297F3D38002218D9 /* NotedLikeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotedLikeModel.swift; sourceTree = "<group>"; };
+		624B9005297F3D45002218D9 /* NotedLikeModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotedLikeModelView.swift; sourceTree = "<group>"; };
+		624B9007297F3F91002218D9 /* AddNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewController.swift; sourceTree = "<group>"; };
+		624B9009297F3FC0002218D9 /* AddNoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteModel.swift; sourceTree = "<group>"; };
+		624B900B297F3FCC002218D9 /* AddNoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewModel.swift; sourceTree = "<group>"; };
 		629E3DAF297D8F0500DD5D62 /* DetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
 		629E3DB1297D91E000DD5D62 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		62C47AFD297AE51A00DC3BE5 /* simpraBootcampFinalProj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = simpraBootcampFinalProj.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,9 +123,9 @@
 			children = (
 				62C47B1E297BFEBC00DC3BE5 /* Main Screen */,
 				62C47B1F297BFECF00DC3BE5 /* Detail Screen */,
-				62C47B20297BFF0E00DC3BE5 /* Liked Screen */,
 				62C47B21297BFF2900DC3BE5 /* Noted Screen */,
 				62C47B22297BFF4B00DC3BE5 /* Add Note Screen */,
+				62C47B20297BFF0E00DC3BE5 /* nothing Liked Screen */,
 			);
 			path = MVVM;
 			sourceTree = "<group>";
@@ -142,11 +154,14 @@
 			path = "Detail Screen";
 			sourceTree = "<group>";
 		};
-		62C47B20297BFF0E00DC3BE5 /* Liked Screen */ = {
+		62C47B20297BFF0E00DC3BE5 /* nothing Liked Screen */ = {
 			isa = PBXGroup;
 			children = (
+				624B9003297F3D38002218D9 /* NotedLikeModel.swift */,
+				624B9005297F3D45002218D9 /* NotedLikeModelView.swift */,
+				624B9001297F3C7C002218D9 /* NotedLikeViewController.swift */,
 			);
-			path = "Liked Screen";
+			path = "nothing Liked Screen";
 			sourceTree = "<group>";
 		};
 		62C47B21297BFF2900DC3BE5 /* Noted Screen */ = {
@@ -165,6 +180,9 @@
 		62C47B22297BFF4B00DC3BE5 /* Add Note Screen */ = {
 			isa = PBXGroup;
 			children = (
+				624B9009297F3FC0002218D9 /* AddNoteModel.swift */,
+				624B900B297F3FCC002218D9 /* AddNoteViewModel.swift */,
+				624B9007297F3F91002218D9 /* AddNoteViewController.swift */,
 			);
 			path = "Add Note Screen";
 			sourceTree = "<group>";
@@ -267,16 +285,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				624B9008297F3F91002218D9 /* AddNoteViewController.swift in Sources */,
 				62C47B25297C016900DC3BE5 /* Services.swift in Sources */,
 				62C47B05297AE51A00DC3BE5 /* MainViewController.swift in Sources */,
 				62C47B43297CFA4200DC3BE5 /* NotedTableViewHelper.swift in Sources */,
+				624B9002297F3C7C002218D9 /* NotedLikeViewController.swift in Sources */,
 				62C47B30297C153300DC3BE5 /* MainTableViewCell.swift in Sources */,
 				62C84FA8297D800A003CEF97 /* InternetManager.swift in Sources */,
 				62C47B27297C0ED600DC3BE5 /* MainModel.swift in Sources */,
 				629E3DB2297D91E000DD5D62 /* DetailViewModel.swift in Sources */,
 				62C47B39297CB0B500DC3BE5 /* NotedViewModel.swift in Sources */,
 				62C47B29297C0F0800DC3BE5 /* MainViewModel.swift in Sources */,
+				624B9006297F3D45002218D9 /* NotedLikeModelView.swift in Sources */,
+				624B900C297F3FCC002218D9 /* AddNoteViewModel.swift in Sources */,
 				62C84FAA297D8141003CEF97 /* DetailViewController.swift in Sources */,
+				624B900A297F3FC0002218D9 /* AddNoteModel.swift in Sources */,
 				62C47B37297CB0A800DC3BE5 /* NotedModel.swift in Sources */,
 				62C47B01297AE51A00DC3BE5 /* AppDelegate.swift in Sources */,
 				629E3DB0297D8F0500DD5D62 /* DetailModel.swift in Sources */,
@@ -285,6 +308,7 @@
 				62C47B03297AE51A00DC3BE5 /* SceneDelegate.swift in Sources */,
 				62C47B3B297CB0D400DC3BE5 /* NotedViewController.swift in Sources */,
 				62C47B33297C188700DC3BE5 /* MainTableViewHelper.swift in Sources */,
+				624B9004297F3D38002218D9 /* NotedLikeModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

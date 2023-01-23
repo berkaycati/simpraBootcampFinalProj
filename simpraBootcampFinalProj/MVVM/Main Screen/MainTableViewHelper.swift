@@ -48,8 +48,11 @@ extension MainTableViewHelper: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //viewModel?.cellPressed(indexPath.row)
-        vc?.performSegue(withIdentifier: "toDetailedVC", sender: items[indexPath.row])
+//        vc?.performSegue(withIdentifier: "toDetailedVC", sender: items[indexPath.row])
         tableView.deselectRow(at: indexPath, animated: true)
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController
+        vc?.navigationController?.pushViewController(vc!, animated: true)
         
     }
 

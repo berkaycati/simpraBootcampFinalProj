@@ -12,6 +12,10 @@ class DetailViewController: UIViewController {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet var nameLabel: UIView!
+    @IBOutlet weak var ratingLabel: UILabel!
+    @IBOutlet weak var idLabel: UILabel!
+    @IBOutlet weak var releasedLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,4 +24,9 @@ class DetailViewController: UIViewController {
     }
     
 
+    @IBAction func addNoteClicked(_ sender: Any) {
+        
+    }
+    
+    
 }
