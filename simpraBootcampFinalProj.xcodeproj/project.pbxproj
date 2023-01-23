@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		629E3DB0297D8F0500DD5D62 /* DetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629E3DAF297D8F0500DD5D62 /* DetailModel.swift */; };
+		629E3DB2297D91E000DD5D62 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629E3DB1297D91E000DD5D62 /* DetailViewModel.swift */; };
 		62C47B01297AE51A00DC3BE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C47B00297AE51A00DC3BE5 /* AppDelegate.swift */; };
 		62C47B03297AE51A00DC3BE5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C47B02297AE51A00DC3BE5 /* SceneDelegate.swift */; };
 		62C47B05297AE51A00DC3BE5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C47B04297AE51A00DC3BE5 /* MainViewController.swift */; };
@@ -23,9 +25,19 @@
 		62C47B31297C153300DC3BE5 /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62C47B2F297C153300DC3BE5 /* MainTableViewCell.xib */; };
 		62C47B33297C188700DC3BE5 /* MainTableViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C47B32297C188700DC3BE5 /* MainTableViewHelper.swift */; };
 		62C47B35297C23E400DC3BE5 /* EntitiyProblem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C47B34297C23E400DC3BE5 /* EntitiyProblem.swift */; };
+		62C47B37297CB0A800DC3BE5 /* NotedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C47B36297CB0A800DC3BE5 /* NotedModel.swift */; };
+		62C47B39297CB0B500DC3BE5 /* NotedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C47B38297CB0B500DC3BE5 /* NotedViewModel.swift */; };
+		62C47B3B297CB0D400DC3BE5 /* NotedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C47B3A297CB0D400DC3BE5 /* NotedViewController.swift */; };
+		62C47B3E297CB12F00DC3BE5 /* NotedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C47B3C297CB12F00DC3BE5 /* NotedTableViewCell.swift */; };
+		62C47B3F297CB12F00DC3BE5 /* NotedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62C47B3D297CB12F00DC3BE5 /* NotedTableViewCell.xib */; };
+		62C47B43297CFA4200DC3BE5 /* NotedTableViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C47B42297CFA4200DC3BE5 /* NotedTableViewHelper.swift */; };
+		62C84FA8297D800A003CEF97 /* InternetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C84FA7297D800A003CEF97 /* InternetManager.swift */; };
+		62C84FAA297D8141003CEF97 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C84FA9297D8141003CEF97 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		629E3DAF297D8F0500DD5D62 /* DetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
+		629E3DB1297D91E000DD5D62 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		62C47AFD297AE51A00DC3BE5 /* simpraBootcampFinalProj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = simpraBootcampFinalProj.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		62C47B00297AE51A00DC3BE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		62C47B02297AE51A00DC3BE5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -42,6 +54,14 @@
 		62C47B2F297C153300DC3BE5 /* MainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
 		62C47B32297C188700DC3BE5 /* MainTableViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewHelper.swift; sourceTree = "<group>"; };
 		62C47B34297C23E400DC3BE5 /* EntitiyProblem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntitiyProblem.swift; sourceTree = "<group>"; };
+		62C47B36297CB0A800DC3BE5 /* NotedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotedModel.swift; sourceTree = "<group>"; };
+		62C47B38297CB0B500DC3BE5 /* NotedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotedViewModel.swift; sourceTree = "<group>"; };
+		62C47B3A297CB0D400DC3BE5 /* NotedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotedViewController.swift; sourceTree = "<group>"; };
+		62C47B3C297CB12F00DC3BE5 /* NotedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotedTableViewCell.swift; sourceTree = "<group>"; };
+		62C47B3D297CB12F00DC3BE5 /* NotedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotedTableViewCell.xib; sourceTree = "<group>"; };
+		62C47B42297CFA4200DC3BE5 /* NotedTableViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotedTableViewHelper.swift; sourceTree = "<group>"; };
+		62C84FA7297D800A003CEF97 /* InternetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetManager.swift; sourceTree = "<group>"; };
+		62C84FA9297D8141003CEF97 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +96,7 @@
 		62C47AFF297AE51A00DC3BE5 /* simpraBootcampFinalProj */ = {
 			isa = PBXGroup;
 			children = (
+				62C84FA6297D7FF9003CEF97 /* Managers */,
 				62C47B23297BFFD000DC3BE5 /* Delegates */,
 				62C47B1D297BFE9B00DC3BE5 /* MVVM */,
 				62C47B06297AE51A00DC3BE5 /* Main.storyboard */,
@@ -116,6 +137,9 @@
 		62C47B1F297BFECF00DC3BE5 /* Detail Screen */ = {
 			isa = PBXGroup;
 			children = (
+				629E3DAF297D8F0500DD5D62 /* DetailModel.swift */,
+				629E3DB1297D91E000DD5D62 /* DetailViewModel.swift */,
+				62C84FA9297D8141003CEF97 /* DetailViewController.swift */,
 			);
 			path = "Detail Screen";
 			sourceTree = "<group>";
@@ -130,6 +154,12 @@
 		62C47B21297BFF2900DC3BE5 /* Noted Screen */ = {
 			isa = PBXGroup;
 			children = (
+				62C47B36297CB0A800DC3BE5 /* NotedModel.swift */,
+				62C47B38297CB0B500DC3BE5 /* NotedViewModel.swift */,
+				62C47B3A297CB0D400DC3BE5 /* NotedViewController.swift */,
+				62C47B3C297CB12F00DC3BE5 /* NotedTableViewCell.swift */,
+				62C47B3D297CB12F00DC3BE5 /* NotedTableViewCell.xib */,
+				62C47B42297CFA4200DC3BE5 /* NotedTableViewHelper.swift */,
 			);
 			path = "Noted Screen";
 			sourceTree = "<group>";
@@ -149,6 +179,14 @@
 				62C47B34297C23E400DC3BE5 /* EntitiyProblem.swift */,
 			);
 			path = Delegates;
+			sourceTree = "<group>";
+		};
+		62C84FA6297D7FF9003CEF97 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				62C84FA7297D800A003CEF97 /* InternetManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				62C47B10297AE51B00DC3BE5 /* LaunchScreen.storyboard in Resources */,
+				62C47B3F297CB12F00DC3BE5 /* NotedTableViewCell.xib in Resources */,
 				62C47B0D297AE51B00DC3BE5 /* Assets.xcassets in Resources */,
 				62C47B31297C153300DC3BE5 /* MainTableViewCell.xib in Resources */,
 				62C47B08297AE51A00DC3BE5 /* Main.storyboard in Resources */,
@@ -233,13 +272,22 @@
 			files = (
 				62C47B25297C016900DC3BE5 /* Services.swift in Sources */,
 				62C47B05297AE51A00DC3BE5 /* MainViewController.swift in Sources */,
+				62C47B43297CFA4200DC3BE5 /* NotedTableViewHelper.swift in Sources */,
 				62C47B30297C153300DC3BE5 /* MainTableViewCell.swift in Sources */,
+				62C84FA8297D800A003CEF97 /* InternetManager.swift in Sources */,
 				62C47B27297C0ED600DC3BE5 /* MainModel.swift in Sources */,
 				62C47B35297C23E400DC3BE5 /* EntitiyProblem.swift in Sources */,
+				629E3DB2297D91E000DD5D62 /* DetailViewModel.swift in Sources */,
+				62C47B39297CB0B500DC3BE5 /* NotedViewModel.swift in Sources */,
 				62C47B29297C0F0800DC3BE5 /* MainViewModel.swift in Sources */,
+				62C84FAA297D8141003CEF97 /* DetailViewController.swift in Sources */,
+				62C47B37297CB0A800DC3BE5 /* NotedModel.swift in Sources */,
 				62C47B01297AE51A00DC3BE5 /* AppDelegate.swift in Sources */,
+				629E3DB0297D8F0500DD5D62 /* DetailModel.swift in Sources */,
 				62C47B0B297AE51A00DC3BE5 /* simpraBootcampFinalProj.xcdatamodeld in Sources */,
+				62C47B3E297CB12F00DC3BE5 /* NotedTableViewCell.swift in Sources */,
 				62C47B03297AE51A00DC3BE5 /* SceneDelegate.swift in Sources */,
+				62C47B3B297CB0D400DC3BE5 /* NotedViewController.swift in Sources */,
 				62C47B33297C188700DC3BE5 /* MainTableViewHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

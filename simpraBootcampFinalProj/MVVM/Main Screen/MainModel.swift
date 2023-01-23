@@ -8,56 +8,77 @@
 import Foundation
 import Alamofire
 import CoreData
-import CoreData
 import UIKit
 
 
 class MainModel {
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
     let apiKey: String = "ddb4403e135a40c0bd385887074b55fa"
+    
     private(set) var data: [Result] = []
-    private(set) var databaseData: [ListEntity] = []
+    private(set) var databaseData: [Entity] = []
+    
     weak var delegate: MainModelProtocol?
     
     func fetchData() {
         
-        AF.request("https://api.rawg.io/api/games?key=\(apiKey)&page=7").responseDecodable(of: GameApiData.self ) { game in
-            guard let response = game.value else {
-                self.delegate?.didDataCouldntFetch()
-                print("There is no data")
-                return
+        if InternetManager.shared.isInternetActive() {
+            AF.request("https://api.rawg.io/api/games?key=\(apiKey)&page=7").responseDecodable(of: Games.self ) { (res) in
+                
+                guard let response = res.value else {
+                    self.delegate?.didDataCouldntFetch()
+                    print("There is no data")
+                    return
+                }
+                self.data = response.results ?? []
+                self.delegate?.didDataFetch()
+                print("data geldi")
+                
+                for eachItem in self.data {
+                    self.saveToCoreData(eachItem)
+                }
             }
-            self.data = response.mainResults ?? []
-            self.delegate?.didDataFetch()
+        } else {
+            retrieveFromCoreData()
+            print("coredatadan çektim")
         }
+        
+        
         
     }
     
     private func saveToCoreData(_ data: Result) {
       let context = appDelegate.persistentContainer.viewContext
-      if let entity = NSEntityDescription.entity(forEntityName: "ListEntity", in: context) {
+      if let entity = NSEntityDescription.entity(forEntityName: "Entity", in: context) {
         let listObject = NSManagedObject(entity: entity, insertInto: context)
         listObject.setValue(data.name ?? "", forKey: "name")
+        listObject.setValue(data.backgroundImage ?? "", forKey: "backgroundImage")
+        listObject.setValue(data.rating ?? 0, forKey: "rating")
+        listObject.setValue(data.released ?? "", forKey: "released")
+          listObject.setValue(data.id, forKey: "id")
         
         do {
           try context.save()
+            print("CoreDataya Kaydettim")
         } catch {
           print("ERROR while saving data to CoreData")
         }
       }
     }
     
-    private func retrieveFromCoreData() {
+    public func retrieveFromCoreData() {
       let context = appDelegate.persistentContainer.viewContext
       
-      let request = NSFetchRequest<ListEntity>(entityName: "ListEntity")
+      let request = NSFetchRequest<Entity>(entityName: "Entity")
       
       do {
         let result = try context.fetch(request)
         print("\(result.count)")
         self.databaseData = result
         delegate?.didCacheDataFetch()
+          print("data çekildi")
       } catch {
         print("ERROR while fetching data from CoreData")
         delegate?.didDataCouldntFetch()
@@ -65,8 +86,6 @@ class MainModel {
     }
     
 }
-
-
 
 protocol MainModelProtocol: AnyObject {
     func didDataFetch()
