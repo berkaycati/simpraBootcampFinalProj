@@ -25,7 +25,7 @@ class MainModel {
     func fetchData() {
         
         if InternetManager.shared.isInternetActive() {
-            AF.request("https://api.rawg.io/api/games?key=\(apiKey)&page=7").responseDecodable(of: Games.self ) { (res) in
+            AF.request("https://api.rawg.io/api/games?key=\(apiKey)&page=5").responseDecodable(of: Games.self ) { (res) in
                 
                 guard let response = res.value else {
                     self.delegate?.didDataCouldntFetch()

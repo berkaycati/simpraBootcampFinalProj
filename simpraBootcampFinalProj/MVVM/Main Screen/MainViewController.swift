@@ -10,6 +10,8 @@ import UIKit
 class MainViewController: UIViewController {
     
     @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     private let viewModel = MainViewModel()
     private var tableHelper: MainTableViewHelper!
 //    private var fetchingData : MainModel?
@@ -36,7 +38,7 @@ class MainViewController: UIViewController {
 private extension MainViewController {
     
     private func setupUI() {
-        tableHelper = .init(tableView: tableView, viewModel: viewModel)
+        tableHelper = .init(tableView: tableView, viewModel: viewModel, searchBar: searchBar)
     }
     //    func setItems(_ items: [MainCellModel]) {
     //        self.items = items

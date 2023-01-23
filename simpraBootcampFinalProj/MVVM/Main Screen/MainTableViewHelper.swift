@@ -16,12 +16,15 @@ class MainTableViewHelper: NSObject {
     
     private var tableView: UITableView?
     private weak var viewModel: MainViewModel?
+    private var searchBar: UISearchBar?
     
     private var items: [RowItem] = []
+    var filteredData : [String]?
     
-    init(tableView: UITableView, viewModel: MainViewModel) {
+    init(tableView: UITableView, viewModel: MainViewModel, searchBar: UISearchBar) {
         self.tableView = tableView
         self.viewModel = viewModel
+        self.searchBar = searchBar
         super.init()
         
         setupTableView()
@@ -31,6 +34,7 @@ class MainTableViewHelper: NSObject {
         tableView?.register(.init(nibName: "MainTableViewCell", bundle: nil), forCellReuseIdentifier: "MainTableViewCell")
         tableView?.delegate = self
         tableView?.dataSource = self
+        searchBar?.delegate = self
     }
     
     func setItemss(_ items: [RowItem]) {
@@ -59,4 +63,26 @@ extension MainTableViewHelper: UITableViewDataSource {
         return cell
     }
 
+}
+
+extension MainTableViewHelper: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        filteredData = items.compactMap { (names) -> String? in
+            if names.name.lowercased().range(of: searchText.lowercased()) != nil {
+                return names.name
+            } else {
+                return nil
+            }
+        }
+        
+        print(searchText)
+        tableView?.reloadData()
+        
+//        if searchText.isEmpty {
+//            filteredData = []
+//        } else {
+//            filteredData = filteredData.filter
+//        }
+    }
 }

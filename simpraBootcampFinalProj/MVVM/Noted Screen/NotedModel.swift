@@ -29,7 +29,7 @@ class NotedModel {
         print("\(result.count)")
         self.databaseData = result
         delegate?.didCacheDataFetch()
-          print("data kaydedildi")
+          print("datadan çektim")
       } catch {
         print("ERROR while fetching data from CoreData")
         delegate?.didDataCouldntFetch()

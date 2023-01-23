@@ -85,6 +85,14 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="NSM-65-GAO">
                                 <rect key="frame" x="0.0" y="47" width="390" height="714"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" id="ewe-tP-25U">
+                                    <rect key="frame" x="0.0" y="0.0" width="390" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="BYZ-38-t0r" id="2Gl-gh-Xkb"/>
+                                    </connections>
+                                </searchBar>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -98,6 +106,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" image="circle.dashed" catalog="system" selectedImage="circle.dashed.inset.filled" id="mCn-GJ-3L0"/>
                     <connections>
+                        <outlet property="searchBar" destination="ewe-tP-25U" id="ELJ-iV-IZw"/>
                         <outlet property="tableView" destination="NSM-65-GAO" id="BNZ-W8-vdj"/>
                     </connections>
                 </viewController>
