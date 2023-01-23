@@ -10,6 +10,7 @@ import UIKit
 
 class MainViewModel {
     private let model = MainModel()
+    private var vc: MainViewController?
     
     var onErrorDetected: ( (String?) -> () )?
     var refreshItem: ( ([MainCellModel]) -> () )?
@@ -23,12 +24,8 @@ class MainViewModel {
     }
     
     func cellPressed(_ index: Int) {
-//        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-//        if let vc = storyBoard.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController {
-//            vc.modalPresentationStyle = .fullScreen
-//            DispatchQueue.main.async {
-//            }
-//        }
+        //vc?.performSegue(withIdentifier: "toDetailedVC", sender: nil)
+        
     }
 }
 

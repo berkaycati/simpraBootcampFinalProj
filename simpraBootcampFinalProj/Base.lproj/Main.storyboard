@@ -13,34 +13,34 @@
             <objects>
                 <viewController storyboardIdentifier="DetailViewController" id="u5Y-Tj-pHC" customClass="DetailViewController" customModule="simpraBootcampFinalProj" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="atw-tg-gnN">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pr8-GD-ejH">
                                 <rect key="frame" x="15" y="105.00000000000003" width="361" height="307.66666666666674"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="307.66666666666674" id="k9C-HT-Xz1"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="57U-zq-Eok">
                                 <rect key="frame" x="15" y="47" width="359" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="f5r-1f-N09"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="nameLabel" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="enj-K6-fgf">
-                                <rect key="frame" x="16" y="421" width="170" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="170" id="WqZ-nw-icT"/>
+                                    <constraint firstAttribute="height" constant="21" id="NmF-5v-6hO"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RatingLabel" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YaT-EP-IGr">
-                                <rect key="frame" x="204" y="420" width="177" height="21"/>
+                                <rect key="frame" x="106" y="636" width="177" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nameLabel" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="enj-K6-fgf">
+                                <rect key="frame" x="113" y="488" width="170" height="20"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="C2Q-90-8zz"/>
+                                    <constraint firstAttribute="height" constant="20" id="mZh-Ny-Wfb"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -50,19 +50,19 @@
                         <viewLayoutGuide key="safeArea" id="hbB-1r-tMD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="hbB-1r-tMD" firstAttribute="bottom" secondItem="enj-K6-fgf" secondAttribute="bottom" constant="369" id="8Xy-1U-dff"/>
-                            <constraint firstItem="enj-K6-fgf" firstAttribute="leading" secondItem="atw-tg-gnN" secondAttribute="leadingMargin" id="BaR-ee-mPl"/>
-                            <constraint firstItem="enj-K6-fgf" firstAttribute="baseline" secondItem="YaT-EP-IGr" secondAttribute="baseline" id="H4G-XK-LcR"/>
-                            <constraint firstItem="enj-K6-fgf" firstAttribute="centerY" secondItem="YaT-EP-IGr" secondAttribute="centerY" id="Q19-Yo-E6r"/>
-                            <constraint firstItem="pr8-GD-ejH" firstAttribute="centerX" secondItem="atw-tg-gnN" secondAttribute="centerX" id="TNC-9g-QxY"/>
-                            <constraint firstItem="57U-zq-Eok" firstAttribute="trailing" secondItem="atw-tg-gnN" secondAttribute="trailingMargin" id="fc5-BZ-6fY"/>
-                            <constraint firstItem="57U-zq-Eok" firstAttribute="leading" secondItem="pr8-GD-ejH" secondAttribute="leading" id="kYG-Hv-w9h"/>
-                            <constraint firstItem="YaT-EP-IGr" firstAttribute="top" secondItem="pr8-GD-ejH" secondAttribute="bottom" constant="7.3333333333332575" id="kf5-lM-L5u"/>
-                            <constraint firstItem="hbB-1r-tMD" firstAttribute="trailing" secondItem="YaT-EP-IGr" secondAttribute="trailing" constant="9" id="prF-mf-JnG"/>
-                            <constraint firstItem="pr8-GD-ejH" firstAttribute="top" secondItem="57U-zq-Eok" secondAttribute="bottom" constant="37" id="q2O-wt-OwB"/>
-                            <constraint firstItem="YaT-EP-IGr" firstAttribute="leading" secondItem="enj-K6-fgf" secondAttribute="trailing" constant="18" id="syk-l9-JYn"/>
-                            <constraint firstItem="57U-zq-Eok" firstAttribute="top" secondItem="hbB-1r-tMD" secondAttribute="top" id="u6P-9o-Lcw"/>
-                            <constraint firstItem="57U-zq-Eok" firstAttribute="leading" secondItem="hbB-1r-tMD" secondAttribute="leading" constant="15" id="xiA-m1-UGr"/>
+                            <constraint firstItem="57U-zq-Eok" firstAttribute="leading" secondItem="hbB-1r-tMD" secondAttribute="leading" constant="15" id="Gq2-iH-Qa3"/>
+                            <constraint firstItem="YaT-EP-IGr" firstAttribute="leading" secondItem="atw-tg-gnN" secondAttribute="leadingMargin" constant="90" id="KBa-h2-mtw"/>
+                            <constraint firstItem="57U-zq-Eok" firstAttribute="top" secondItem="atw-tg-gnN" secondAttribute="top" constant="47" id="O2s-bS-TAv"/>
+                            <constraint firstItem="57U-zq-Eok" firstAttribute="leading" secondItem="pr8-GD-ejH" secondAttribute="leading" id="OZA-fj-B3i"/>
+                            <constraint firstItem="hbB-1r-tMD" firstAttribute="trailing" secondItem="enj-K6-fgf" secondAttribute="trailing" constant="107" id="V2F-sA-dE8"/>
+                            <constraint firstItem="57U-zq-Eok" firstAttribute="trailing" secondItem="atw-tg-gnN" secondAttribute="trailingMargin" id="bEu-1d-5o3"/>
+                            <constraint firstItem="enj-K6-fgf" firstAttribute="leading" secondItem="hbB-1r-tMD" secondAttribute="leading" constant="113" id="fMs-PM-keX"/>
+                            <constraint firstItem="enj-K6-fgf" firstAttribute="top" secondItem="YaT-EP-IGr" secondAttribute="bottom" constant="-169" id="iyo-ZV-TSf"/>
+                            <constraint firstItem="pr8-GD-ejH" firstAttribute="centerX" secondItem="atw-tg-gnN" secondAttribute="centerX" id="mlM-Zo-I9O"/>
+                            <constraint firstItem="pr8-GD-ejH" firstAttribute="top" secondItem="57U-zq-Eok" secondAttribute="bottom" constant="37" id="pwL-OZ-wPJ"/>
+                            <constraint firstItem="hbB-1r-tMD" firstAttribute="bottom" secondItem="enj-K6-fgf" secondAttribute="bottom" constant="279" id="til-Mx-her"/>
+                            <constraint firstItem="YaT-EP-IGr" firstAttribute="top" secondItem="pr8-GD-ejH" secondAttribute="bottom" constant="223.33333333333326" id="wLo-eZ-jFN"/>
+                            <constraint firstItem="YaT-EP-IGr" firstAttribute="centerX" secondItem="enj-K6-fgf" secondAttribute="centerX" constant="-3.5" id="z89-YE-Jaq"/>
                         </constraints>
                     </view>
                     <connections>
@@ -72,9 +72,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JQS-lv-8hA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1851" y="-34"/>
+            <point key="canvasLocation" x="1922" y="-409"/>
         </scene>
-        <!--Item-->
+        <!--Stream-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="simpraBootcampFinalProj" customModuleProvider="target" sceneMemberID="viewController">
@@ -104,33 +104,18 @@
                             <constraint firstItem="NSM-65-GAO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="yOM-Wm-K5e"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" image="circle.dashed" catalog="system" selectedImage="circle.dashed.inset.filled" id="mCn-GJ-3L0"/>
+                    <tabBarItem key="tabBarItem" title="Stream" image="circle.dashed" catalog="system" selectedImage="circle.dashed.inset.filled" id="mCn-GJ-3L0"/>
                     <connections>
                         <outlet property="searchBar" destination="ewe-tP-25U" id="ELJ-iV-IZw"/>
                         <outlet property="tableView" destination="NSM-65-GAO" id="BNZ-W8-vdj"/>
+                        <segue destination="u5Y-Tj-pHC" kind="showDetail" identifier="toDetailedVC" id="P7u-dV-KBK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="983.07692307692309" y="-34.123222748815166"/>
+            <point key="canvasLocation" x="1002" y="-409"/>
         </scene>
-        <!--Item-->
-        <scene sceneID="YPq-Yn-zd3">
-            <objects>
-                <viewController id="Avg-7f-VaY" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="zE4-XO-03W">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="56N-HO-DTU"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item" image="person" catalog="system" selectedImage="person.fill" id="KdZ-xL-hR4"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vLI-aA-CeQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="982" y="667"/>
-        </scene>
-        <!--Item-->
+        <!--Notes-->
         <scene sceneID="Zhk-k6-h0E">
             <objects>
                 <viewController id="lPI-6s-KYT" customClass="NotedViewController" customModule="simpraBootcampFinalProj" customModuleProvider="target" sceneMemberID="viewController">
@@ -152,14 +137,14 @@
                             <constraint firstItem="Trf-5F-Cdc" firstAttribute="top" secondItem="3ot-GT-uvg" secondAttribute="top" id="yxj-fL-eKD"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" image="note" catalog="system" selectedImage="note.text" id="wWX-5N-mzs"/>
+                    <tabBarItem key="tabBarItem" title="Notes" image="note" catalog="system" selectedImage="note.text" id="wWX-5N-mzs"/>
                     <connections>
                         <outlet property="notedTableView" destination="Trf-5F-Cdc" id="PeV-um-0t9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0ZT-ov-JIV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="982" y="1354"/>
+            <point key="canvasLocation" x="1002" y="439"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="901-cd-6nz">
@@ -173,7 +158,6 @@
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="xeo-W1-bJg"/>
-                        <segue destination="Avg-7f-VaY" kind="relationship" relationship="viewControllers" id="iOw-nu-XYL"/>
                         <segue destination="lPI-6s-KYT" kind="relationship" relationship="viewControllers" id="NLr-Gx-GWm"/>
                     </connections>
                 </tabBarController>
@@ -187,8 +171,6 @@
         <image name="circle.dashed.inset.filled" catalog="system" width="128" height="123"/>
         <image name="note" catalog="system" width="128" height="107"/>
         <image name="note.text" catalog="system" width="128" height="107"/>
-        <image name="person" catalog="system" width="128" height="121"/>
-        <image name="person.fill" catalog="system" width="128" height="120"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

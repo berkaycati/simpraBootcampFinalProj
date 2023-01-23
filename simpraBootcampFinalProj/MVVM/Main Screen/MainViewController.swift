@@ -40,10 +40,7 @@ private extension MainViewController {
     private func setupUI() {
         tableHelper = .init(tableView: tableView, viewModel: viewModel, searchBar: searchBar)
     }
-    //    func setItems(_ items: [MainCellModel]) {
-    //        self.items = items
-    //        tableView?.reloadData()
-    //    }
+  
     
     private func setupBindings() {
         viewModel.onErrorDetected = { [weak self] message in

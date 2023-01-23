@@ -11,15 +11,16 @@ import UIKit
 class MainTableViewHelper: NSObject {
     
     typealias RowItem = MainCellModel
-    
+    private var vc: MainViewController?
 //    private let cellIdentifier = "MainTableViewCell"
-    
+
     private var tableView: UITableView?
     private weak var viewModel: MainViewModel?
     private var searchBar: UISearchBar?
     
     private var items: [RowItem] = []
-    var filteredData : [String]?
+    var notfilteredData: [String] = []
+    var filteredData: [String] = []
     
     init(tableView: UITableView, viewModel: MainViewModel, searchBar: UISearchBar) {
         self.tableView = tableView
@@ -46,7 +47,10 @@ class MainTableViewHelper: NSObject {
 extension MainTableViewHelper: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        viewModel?.cellPressed(indexPath.row)
+        //viewModel?.cellPressed(indexPath.row)
+        vc?.performSegue(withIdentifier: "toDetailedVC", sender: items[indexPath.row])
+        tableView.deselectRow(at: indexPath, animated: true)
+        
     }
 
 }
@@ -68,15 +72,23 @@ extension MainTableViewHelper: UITableViewDataSource {
 extension MainTableViewHelper: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
-        filteredData = items.compactMap { (names) -> String? in
-            if names.name.lowercased().range(of: searchText.lowercased()) != nil {
-                return names.name
-            } else {
-                return nil
-            }
-        }
+//        filteredData = items.compactMap { (names) -> String? in
+//            if names.name.lowercased().range(of: searchText.lowercased()) != nil {
+//                return names.name
+//            } else {
+//                return nil
+//            }
+//        }
         
-        print(searchText)
+        notfilteredData = items.map { $0.name }
+        
+        print(notfilteredData)
+        
+        filteredData = searchText.isEmpty ? notfilteredData : notfilteredData.filter({(str: String) -> Bool in
+            return str.range(of: searchText, options: .caseInsensitive) != nil
+        })
+        
+        
         tableView?.reloadData()
         
 //        if searchText.isEmpty {
