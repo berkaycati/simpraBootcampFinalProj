@@ -14,8 +14,8 @@ class MainViewController: UIViewController {
     
     private let viewModel = MainViewModel()
     private var tableHelper: MainTableViewHelper!
+
 //    private var fetchingData : MainModel?
-    
 //    private let cellIdentifier = "MainTableViewCell"
 //    private var items: [RowItem] = []
     
@@ -25,9 +25,10 @@ class MainViewController: UIViewController {
         
         setupUI()
         setupBindings()
-        //setupTableView()
         viewModel.didViewLoad()
+        
         //fetchingData?.fetchData()
+        //setupTableView()
         
     }
 }
@@ -56,3 +57,16 @@ private extension MainViewController {
     }
 }
 
+//extension MainViewController: UITableViewDelegate {
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        
+//        //notfilteredData = items.map { $0.backgroundImage }
+//        
+//        //        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+//        //        if let vc = storyBoard.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController {
+//        //            navigationController?.pushViewController(vc, animated: true)
+//        //
+//        //        }
+//        
+//    }
+//}

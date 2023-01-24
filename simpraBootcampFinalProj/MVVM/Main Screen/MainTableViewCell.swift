@@ -34,7 +34,7 @@ class MainTableViewCell: UITableViewCell {
         nameLabel.text = model.name ?? "berkuy"
         ratingLabel.text = "Rating: \(model.rating)" ?? "Rating is ??"
         idLabel.text = "Game id is \(model.id)" ?? "Unknown Id"
-        releasedLabel.text = model.released
+        releasedLabel.text = "Released Date: \(model.released)"
         
     }
     

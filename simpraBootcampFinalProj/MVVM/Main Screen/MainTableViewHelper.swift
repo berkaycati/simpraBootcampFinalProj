@@ -13,7 +13,8 @@ class MainTableViewHelper: NSObject {
     typealias RowItem = MainCellModel
     private var vc: MainViewController?
 //    private let cellIdentifier = "MainTableViewCell"
-
+    
+    private let navigationController = UINavigationController()
     private var tableView: UITableView?
     private weak var viewModel: MainViewModel?
     private var searchBar: UISearchBar?
@@ -26,6 +27,7 @@ class MainTableViewHelper: NSObject {
         self.tableView = tableView
         self.viewModel = viewModel
         self.searchBar = searchBar
+//        self.navigationController =
         super.init()
         
         setupTableView()
@@ -45,43 +47,40 @@ class MainTableViewHelper: NSObject {
  }
 
 extension MainTableViewHelper: UITableViewDelegate {
-
+    
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //viewModel?.cellPressed(indexPath.row)
-//        vc?.performSegue(withIdentifier: "toDetailedVC", sender: items[indexPath.row])
-        tableView.deselectRow(at: indexPath, animated: true)
-        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyBoard.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController
-        vc?.navigationController?.pushViewController(vc!, animated: true)
         
+        viewModel?.cellPressed(indexPath.row)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
-
 }
-
+    
+    
 extension MainTableViewHelper: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
     }
-
-
+        
+        
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MainTableViewCell") as! MainTableViewCell
         cell.configure(with: items[indexPath.row])
         return cell
     }
-
+        
 }
-
+    
 extension MainTableViewHelper: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
-//        filteredData = items.compactMap { (names) -> String? in
-//            if names.name.lowercased().range(of: searchText.lowercased()) != nil {
-//                return names.name
-//            } else {
-//                return nil
-//            }
-//        }
+            
+        //        filteredData = items.compactMap { (names) -> String? in
+            //            if names.name.lowercased().range(of: searchText.lowercased()) != nil {
+        //                return names.name
+        //            } else {
+        //                return nil
+        //            }
+        //        }
         
         notfilteredData = items.map { $0.name }
         
@@ -94,10 +93,12 @@ extension MainTableViewHelper: UISearchBarDelegate {
         
         tableView?.reloadData()
         
-//        if searchText.isEmpty {
-//            filteredData = []
-//        } else {
-//            filteredData = filteredData.filter
-//        }
+        //        if searchText.isEmpty {
+        //            filteredData = []
+        //        } else {
+        //            filteredData = filteredData.filter
+        //        }
     }
+        
 }
+

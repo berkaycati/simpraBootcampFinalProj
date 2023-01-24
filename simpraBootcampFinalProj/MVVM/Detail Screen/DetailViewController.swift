@@ -25,8 +25,19 @@ class DetailViewController: UIViewController {
     
 
     @IBAction func addNoteClicked(_ sender: Any) {
-        
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        if let vc = storyBoard.instantiateViewController(withIdentifier: "AddNoteViewController") as? AddNoteViewController {
+            present(vc, animated: true)
+        }
     }
     
     
+}
+
+extension DetailViewController: UITextFieldDelegate {
+    
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        
+    }
 }

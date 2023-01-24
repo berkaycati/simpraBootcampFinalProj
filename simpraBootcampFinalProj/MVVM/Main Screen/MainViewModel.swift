@@ -11,6 +11,7 @@ import UIKit
 class MainViewModel {
     private let model = MainModel()
     private var vc: MainViewController?
+    private let navigationController = UIViewController()
     
     var onErrorDetected: ( (String?) -> () )?
     var refreshItem: ( ([MainCellModel]) -> () )?
@@ -24,7 +25,12 @@ class MainViewModel {
     }
     
     func cellPressed(_ index: Int) {
-        //vc?.performSegue(withIdentifier: "toDetailedVC", sender: nil)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let vc = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController {
+            print("içerdeyim")
+                navigationController.present(vc, animated: true)
+            
+        }
         
     }
 }

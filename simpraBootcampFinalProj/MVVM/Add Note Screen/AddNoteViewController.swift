@@ -15,12 +15,20 @@ class AddNoteViewController: UIViewController {
     @IBOutlet weak var saveButton: UIButton!
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        saveButton.isEnabled = false
+        
     }
 
     @IBAction func saveButtonClicked(_ sender: Any) {
+        
+    
+        
     }
+    
+}
+extension AddNoteViewController {
     
 }
