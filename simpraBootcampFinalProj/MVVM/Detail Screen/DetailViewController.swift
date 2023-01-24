@@ -12,10 +12,11 @@ class DetailViewController: UIViewController {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet var nameLabel: UIView!
     @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var idLabel: UILabel!
     @IBOutlet weak var releasedLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,17 +28,15 @@ class DetailViewController: UIViewController {
     @IBAction func addNoteClicked(_ sender: Any) {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         if let vc = storyBoard.instantiateViewController(withIdentifier: "AddNoteViewController") as? AddNoteViewController {
+            vc.modalPresentationStyle = .fullScreen
             present(vc, animated: true)
         }
     }
     
     
-}
-
-extension DetailViewController: UITextFieldDelegate {
     
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        
+    @IBAction func heartButtonClicked(_ sender: Any) {
     }
 }
+
+
