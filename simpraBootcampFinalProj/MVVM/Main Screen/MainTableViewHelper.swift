@@ -11,53 +11,100 @@ import UIKit
 class MainTableViewHelper: NSObject {
     
     typealias RowItem = MainCellModel
+    private var vc: MainViewController?
+//    private let cellIdentifier = "MainTableViewCell"
     
-    private let cellIdentifier = "MainTableViewCell"
-    
+    private let navigationController = UINavigationController()
     private var tableView: UITableView?
-    private var viewModel: MainViewModel?
+    private weak var viewModel: MainViewModel?
+    private var searchBar: UISearchBar?
     
     private var items: [RowItem] = []
+    var notfilteredData: [String] = []
+    var filteredData: [String] = []
     
-    init(tableView: UITableView, viewModel: MainViewModel) {
+    init(tableView: UITableView, viewModel: MainViewModel, searchBar: UISearchBar) {
         self.tableView = tableView
         self.viewModel = viewModel
+        self.searchBar = searchBar
+//        self.navigationController =
         super.init()
         
-        setupTableView()
+//        setupTableView()
     }
-    
-    private func setupTableView() {
-        tableView?.register(.init(nibName: "MainTableViewCell", bundle: nil),
-        forCellReuseIdentifier: cellIdentifier)
-        tableView?.delegate = self
-        tableView?.dataSource = self
-    }
-    
-    func setItems(_ items: [RowItem]) {
-        self.items = items
-        tableView?.reloadData()
-    }
-}
+//    func updateData(_ searchText: String) {
+//        filteredData = searchText.isEmpty ? items.map({ $0.name }) : items.filter({ $0.name.range(of: searchText, options: .caseInsensitive) != nil }).map({ $0.name })
+//        tableView.reloadData()
+//    }
 
-extension MainTableViewHelper: UITableViewDelegate {
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        viewModel?.cellPressed(indexPath.row)
-    }
+//    private func setupTableView() {
+//        tableView?.register(.init(nibName: "MainTableViewCell", bundle: nil), forCellReuseIdentifier: "MainTableViewCell")
+//        tableView?.delegate = self
+//        tableView?.dataSource = self
+//        searchBar?.delegate = self
+//    }
     
-}
+//    func setItemss(_ items: [RowItem]) {
+//        self.items = items
+//        tableView?.reloadData()
+//    }
+ }
 
-extension MainTableViewHelper: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        items.count
-    }
+//extension MainTableViewHelper: UITableViewDelegate {
+//
+//
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//
+//        viewModel?.cellPressed(indexPath.row)
+////        tableView.deselectRow(at: indexPath, animated: true)
+//        navigationController.pushViewController(vc, animated: true)
+//    }
+//}
+//
+//
+//extension MainTableViewHelper: UITableViewDataSource {
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return items.count
+//    }
+//
+//
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "MainTableViewCell") as! MainTableViewCell
+//        cell.configure(with: items[indexPath.row])
+//        return cell
+//    }
+//
+//}
     
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as! MainTableViewCell
-        cell.configure(with: items[indexPath.row])
-        return cell
-    }
-    
-}
+//extension MainTableViewHelper: UISearchBarDelegate {
+//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+//
+//        //        filteredData = items.compactMap { (names) -> String? in
+//            //            if names.name.lowercased().range(of: searchText.lowercased()) != nil {
+//        //                return names.name
+//        //            } else {
+//        //                return nil
+//        //            }
+//        //        }
+//
+//        notfilteredData = items.map { $0.name }
+//
+//        print(notfilteredData)
+//
+//        filteredData = searchText.isEmpty ? notfilteredData : notfilteredData.filter({(str: String) -> Bool in
+//            return str.range(of: searchText, options: .caseInsensitive) != nil
+//        })
+//
+//
+//        tableView?.reloadData()
+//
+//        //        if searchText.isEmpty {
+//        //            filteredData = []
+//        //        } else {
+//        //            filteredData = filteredData.filter
+//        //        }
+//    }
+//
+//}
+
