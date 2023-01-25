@@ -28,12 +28,12 @@ class AddNoteViewModel: AddNoteModelProtocol {
 
 extension AddNoteViewModel {
     func didNoteDataFetch() {
-        let cellModels: [MainCellModel] = model.databaseData.map{_ in 
-            .init(id: <#T##Int#>, name: <#T##String#>, released: <#T##String#>, backgroundImage: <#T##String#>, rating: <#T##Double#>)
-        }
+//        let cellModels: [MainCellModel] = model.databaseData.map{_ in
+//            .init(id: <#T##Int#>, name: <#T##String#>, released: <#T##String#>, backgroundImage: <#T##String#>, rating: <#T##Double#>)
+//        }
     }
     
     func didNoteDataCouldntFetch() {
-        <#code#>
+        
     }
 }

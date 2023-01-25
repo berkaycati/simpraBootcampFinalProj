@@ -9,19 +9,23 @@ import UIKit
 import CoreData
 
 class DetailViewController: UIViewController {
-
+    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var idLabel: UILabel!
     @IBOutlet weak var releasedLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var hearthButton: UIButton!
+    
+    var isActive: Bool = false
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        
+        
     }
     
 
@@ -36,6 +40,20 @@ class DetailViewController: UIViewController {
     
     
     @IBAction func heartButtonClicked(_ sender: Any) {
+        
+        if isActive == false {
+            hearthButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+            
+            
+            
+            isActive = true
+            
+        } else {
+            
+            hearthButton.setImage(UIImage(systemName: "heart"), for: .normal)
+            
+        }
+        
     }
 }
 

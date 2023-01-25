@@ -28,7 +28,7 @@ class AddNoteViewController: UIViewController {
     
     @IBAction func saveButtonClicked(_ sender: Any) {
         
-        let enteredNote = textField.text
+//        let enteredNote = textField.text
         
         
         

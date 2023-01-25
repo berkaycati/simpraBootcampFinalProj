@@ -11,7 +11,7 @@ import UIKit
 class MainViewModel {
     private let model = MainModel()
     private var vc: MainViewController?
-    private let navigationController = UIViewController()
+    private let navigationController = UINavigationController()
     
     var onErrorDetected: ( (String?) -> () )?
     var refreshItem: ( ([MainCellModel]) -> () )?
@@ -24,15 +24,15 @@ class MainViewModel {
         model.fetchData()
     }
     
-    func cellPressed(_ index: Int) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        if let vc = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController {
-            print("içerdeyim")
-                navigationController.present(vc, animated: true)
-            
-        }
-        
-    }
+//    func cellPressed(_ index: Int) {
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        if let vc = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController {
+//            print("içerdeyim")
+//            navigationController.pushViewController(vc, animated: true)
+//            
+//        }
+//        
+//    }
 }
 
 extension MainViewModel: MainModelProtocol {
@@ -62,6 +62,5 @@ extension MainViewModel: MainModelProtocol {
             
         }
         refreshItem?(cellModels)
-//
     }
 }

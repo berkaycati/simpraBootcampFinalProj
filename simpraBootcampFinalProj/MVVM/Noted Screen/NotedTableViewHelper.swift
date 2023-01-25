@@ -24,7 +24,7 @@ class NotedTableViewHelper: NSObject {
         setupTableView()
     }
     
-    private func setupTableView() {
+    func setupTableView() {
         notedTableView?.register(UINib(nibName: "MainTableViewCell", bundle: nil), forCellReuseIdentifier: "MainTableViewCell")
         notedTableView?.dataSource = self
         notedTableView?.delegate = self

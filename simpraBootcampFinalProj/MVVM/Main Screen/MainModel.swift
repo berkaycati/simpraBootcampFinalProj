@@ -22,9 +22,15 @@ class MainModel {
     
     weak var delegate: MainModelProtocol?
     
-    func fetchData() {
+    let refreshController = UIRefreshControl()
+    
+    func fetchData(refresh: Bool = false) {
         
         if InternetManager.shared.isInternetActive() {
+            
+            if refresh {
+                refreshController.beginRefreshing()
+            }
             AF.request("https://api.rawg.io/api/games?key=\(apiKey)&page=5").responseDecodable(of: Games.self ) { (res) in
                 
                 guard let response = res.value else {
@@ -32,6 +38,7 @@ class MainModel {
                     print("There is no data")
                     return
                 }
+                self.refreshController.endRefreshing()
                 self.data = response.results ?? []
                 self.delegate?.didDataFetch()
                 print("data geldi")

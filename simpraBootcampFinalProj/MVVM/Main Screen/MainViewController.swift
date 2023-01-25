@@ -15,21 +15,34 @@ class MainViewController: UIViewController {
     private let viewModel = MainViewModel()
     private var tableHelper: MainTableViewHelper!
 
-//    private var fetchingData : MainModel?
+    private var fetchingData : MainModel?
 //    private let cellIdentifier = "MainTableViewCell"
-//    private var items: [RowItem] = []
+    
+    typealias RowItem = MainCellModel
+    private var items: [RowItem] = []
+    private var notFilteredData: [MainCellModel] = []
+    var filteredData: [String] = []
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        notFilteredData = items
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.dataSource = self
+        
+
+        tableView.reloadData()
+        
         setupUI()
         setupBindings()
         viewModel.didViewLoad()
         
-        //fetchingData?.fetchData()
-        //setupTableView()
-        
+        fetchingData?.fetchData()
+//        viewModel.setupTableView()
+//        self.tableView.refreshControl = UIRefreshControl()
+//        self.tableView.refreshControl?.addTarget(self, action: #selector(refreshData), for: .valueChanged)
     }
 }
 
@@ -39,7 +52,15 @@ class MainViewController: UIViewController {
 private extension MainViewController {
     
     private func setupUI() {
-        tableHelper = .init(tableView: tableView, viewModel: viewModel, searchBar: searchBar)
+
+        tableView.register(.init(nibName: "MainTableViewCell", bundle: nil), forCellReuseIdentifier: "MainTableViewCell")
+        
+    }
+    
+    func setItems(_ items: [RowItem]) {
+        self.items = items
+        notFilteredData = items
+        tableView.reloadData()
     }
   
     
@@ -51,22 +72,85 @@ private extension MainViewController {
         }
         
         viewModel.refreshItem = { [weak self] items in
-            self?.tableHelper.setItemss(items)
+            self?.setItems(items)
             print(items)
+        }
+    }
+    
+    @objc func refreshData() {
+        print("refreshed")
+    }
+}
+
+extension MainViewController: UITableViewDelegate {
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        performSegue(withIdentifier: "toDetailVC", sender: nil)
+    }
+}
+    
+    
+extension MainViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return items.count
+    }
+        
+        
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MainTableViewCell") as! MainTableViewCell
+        cell.configure(with: items[indexPath.row])
+        return cell
+    }
+        
+}
+
+extension MainViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetailVC" {
+            if let nextViewController = segue.destination as? DetailViewController {
+//                nextViewController.idLabel.text = 
+            }
         }
     }
 }
 
-//extension MainViewController: UITableViewDelegate {
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        
-//        //notfilteredData = items.map { $0.backgroundImage }
-//        
-//        //        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-//        //        if let vc = storyBoard.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController {
-//        //            navigationController?.pushViewController(vc, animated: true)
-//        //
-//        //        }
-//        
+extension MainViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+  
+        if searchText.isEmpty {
+                setItems(notFilteredData)
+            } else {
+                items = notFilteredData.filter { $0.name.contains(searchText) }
+                tableView.reloadData()
+            }
+
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        setItems(notFilteredData)
+//        tableView.reloadData()
+    }
+
+    
+    
+//    private func updateData(with searchText: String) {
+//
+////        if searchText.isEmpty {
+////            items = items.map {
+////                MainCellModel(id: $0.id , name: $0.name , released: $0.released , backgroundImage: $0.backgroundImage , rating: $0.rating )
+////            }
+////            tableView.reloadData()
+////        } else {
+////            items = items.filter { $0.name.contains(searchText) }.map {
+////                MainCellModel(id: $0.id , name: $0.name , released: $0.released , backgroundImage: $0.backgroundImage , rating: $0.rating )
+////            }
+////        }
+////        tableView.reloadData()
+//
 //    }
-//}
+
+
+        
+}
