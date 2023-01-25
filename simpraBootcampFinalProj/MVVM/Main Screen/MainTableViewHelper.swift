@@ -98,45 +98,45 @@ class MainTableViewHelper: NSObject {
 //}
     
 
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as! MainTableViewCell
-        cell.configure(with: items[indexPath.row])
-        return cell
-    }
-    
-
-    }
-    
-    private func setupTableView() {
-        tableView?.register(.init(nibName: "MainTableViewCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
-        tableView?.delegate = self
-        tableView?.dataSource = self
-    }
-    
-    func setItemss(_ items: [RowItem]) {
-        self.items = items
-        tableView?.reloadData()
-    }
- }
-
-
-
-extension MainTableViewHelper: UITableViewDataSource, UITableViewDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
-    }
+//    
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as! MainTableViewCell
+//        cell.configure(with: items[indexPath.row])
+//        return cell
+//    }
+//    
+//
+//
+//    
+////    private func setupTableView() {
+//        tableView?.register(.init(nibName: "MainTableViewCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
+//        tableView?.delegate = self
+//        tableView?.dataSource = self
+//    }
+//
+//    func setItemss(_ items: [RowItem]) {
+//        self.items = items
+//        tableView?.reloadData()
+//    }
+//
 
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MainTableViewCell") as! MainTableViewCell
-        cell.configure(with: items[indexPath.row])
-        return cell
-    }
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //viewModel?.cellPressed(indexPath.row)
-    }
+//extension MainTableViewHelper: UITableViewDataSource, UITableViewDelegate {
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return items.count
+//    }
+//
+//
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "MainTableViewCell") as! MainTableViewCell
+//        cell.configure(with: items[indexPath.row])
+//        return cell
+//    }
+//
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        //viewModel?.cellPressed(indexPath.row)
+//    }
+//}
 
 //extension MainTableViewHelper: UISearchBarDelegate {
 //    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {

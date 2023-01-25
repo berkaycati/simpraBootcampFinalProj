@@ -59,9 +59,9 @@ class MainViewController: UIViewController {
         setupBindings()
         viewModel.didViewLoad()
         fetchingData?.fetchData()
-    }
-
 }
+
+
 
 
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
@@ -135,7 +135,7 @@ extension MainViewController {
     }
   
     
-    private func setupBindings() {
+    func setupBindings() {
         viewModel.onErrorDetected = { [weak self] message in
             let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
             alertController.addAction(.init(title: "Ok", style: .default))
