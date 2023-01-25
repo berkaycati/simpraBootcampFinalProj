@@ -16,7 +16,7 @@ class MainViewController: UIViewController {
     private var tableHelper: MainTableViewHelper!
 
     private var fetchingData : MainModel?
-//    private let cellIdentifier = "MainTableViewCell"
+
     
     typealias RowItem = MainCellModel
     private var items: [RowItem] = []
@@ -40,9 +40,6 @@ class MainViewController: UIViewController {
         viewModel.didViewLoad()
         
         fetchingData?.fetchData()
-//        viewModel.setupTableView()
-//        self.tableView.refreshControl = UIRefreshControl()
-//        self.tableView.refreshControl?.addTarget(self, action: #selector(refreshData), for: .valueChanged)
     }
 }
 
@@ -130,27 +127,6 @@ extension MainViewController: UISearchBarDelegate {
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         setItems(notFilteredData)
-//        tableView.reloadData()
     }
-
-    
-    
-//    private func updateData(with searchText: String) {
-//
-////        if searchText.isEmpty {
-////            items = items.map {
-////                MainCellModel(id: $0.id , name: $0.name , released: $0.released , backgroundImage: $0.backgroundImage , rating: $0.rating )
-////            }
-////            tableView.reloadData()
-////        } else {
-////            items = items.filter { $0.name.contains(searchText) }.map {
-////                MainCellModel(id: $0.id , name: $0.name , released: $0.released , backgroundImage: $0.backgroundImage , rating: $0.rating )
-////            }
-////        }
-////        tableView.reloadData()
-//
-//    }
-
-
-        
+      
 }
