@@ -13,6 +13,10 @@ class MainViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
+    
+    
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     private let viewModel = MainViewModel()
     private var tableHelper: MainTableViewHelper!
     private var fetchingData : MainModel?
@@ -87,6 +91,13 @@ extension MainViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.dataSource = self
+        activityIndicator.startAnimating()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+        // execute your code here
+            self.activityIndicator.stopAnimating()
+            self.activityIndicator.isHidden = true
+        }
+        
     }
     
     func setItems(_ items: [RowItem]) {
@@ -112,20 +123,6 @@ extension MainViewController {
     @objc func refreshData() {
         print("refreshed")
     }
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "toDetailedVC" {
-//            if let destinationVC = segue.destination as? DetailedViewController {
-//                let selectedIndex = tableView.indexPathForSelectedRow?.row
-//                let selectedData = items[selectedIndex ?? 0]
-//                destinationVC.imageView.kf.setImage(with: URL(string: selectedData.backgroundImage))
-//                destinationVC.ratingLabel.text = selectedData.rating.description
-//                destinationVC.idLabel.text = selectedData.id.description
-//                destinationVC.releasedLabel.text = selectedData.released
-//                destinationVC.nameLabel.text = selectedData.name
-//            }
-//        }
-//    }
 }
 
 

@@ -219,18 +219,26 @@
                                     </connections>
                                 </searchBar>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="K6Z-Yr-FA2">
+                                <rect key="frame" x="145" y="381" width="100" height="90"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="NSM-65-GAO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="4m3-3c-TWZ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NSM-65-GAO" secondAttribute="trailing" id="Aa4-J3-hgN"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="NSM-65-GAO" secondAttribute="bottom" id="ZgG-Yp-riK"/>
-                            <constraint firstItem="NSM-65-GAO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="yOM-Wm-K5e"/>
+                            <constraint firstItem="K6Z-Yr-FA2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="145" id="7eJ-HX-Jqw"/>
+                            <constraint firstItem="NSM-65-GAO" firstAttribute="centerY" secondItem="K6Z-Yr-FA2" secondAttribute="centerY" id="9q1-Ww-Cyb"/>
+                            <constraint firstItem="NSM-65-GAO" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="JMn-tm-FJn"/>
+                            <constraint firstItem="NSM-65-GAO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Wdl-Zl-gAV"/>
+                            <constraint firstItem="NSM-65-GAO" firstAttribute="centerX" secondItem="K6Z-Yr-FA2" secondAttribute="centerX" id="Wrb-i9-ijX"/>
+                            <constraint firstItem="NSM-65-GAO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bck-dF-RBd"/>
+                            <constraint firstItem="NSM-65-GAO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cEN-Tv-bXM"/>
+                            <constraint firstItem="K6Z-Yr-FA2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="290" id="tyi-xb-pIL"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Main Stream" id="h7j-em-dGR"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="K6Z-Yr-FA2" id="jUM-PE-im5"/>
                         <outlet property="searchBar" destination="ewe-tP-25U" id="ELJ-iV-IZw"/>
                         <outlet property="tableView" destination="NSM-65-GAO" id="BNZ-W8-vdj"/>
                     </connections>

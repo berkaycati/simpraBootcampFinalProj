@@ -16,6 +16,7 @@ class MainModel {
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     let apiKey: String = "ddb4403e135a40c0bd385887074b55fa"
+    var pageNumber: Int = 6
     
     private(set) var data: [Result] = []
     private(set) var databaseData: [Entity] = []
@@ -29,12 +30,12 @@ class MainModel {
     
     func fetchData(refresh: Bool = false, url: URL? = nil) {
         
+        // controlling internet
+        
         if InternetManager.shared.isInternetActive() {
             
-            if refresh {
-                refreshController.beginRefreshing()
-            }
-            AF.request("https://api.rawg.io/api/games?key=\(apiKey)&page=5").responseDecodable(of: Games.self ) { (res) in
+            // fetchin data with Alamofire
+            AF.request("https://api.rawg.io/api/games?key=\(apiKey)&page=\(String(pageNumber))").responseDecodable(of: Games.self ) { (res) in
                 
                 guard let response = res.value else {
                     self.delegate?.didDataCouldntFetch()
@@ -58,7 +59,9 @@ class MainModel {
     }
     
     private func saveToCoreData(_ data: Result) {
-     
+        
+        // saving data to CoreData named "Entity"
+        
         let context = appDelegate.persistentContainer.viewContext
         let request = NSFetchRequest<Entity>(entityName: "Entity")
         request.predicate = NSPredicate(format: "id = %d", data.id!)
@@ -89,6 +92,9 @@ class MainModel {
     
     
     public func retrieveFromCoreData() {
+        
+        // retrieving datas from CoreData named "Entity"
+        
         let context = appDelegate.persistentContainer.viewContext
         
         let request = NSFetchRequest<Entity>(entityName: "Entity")
@@ -106,13 +112,13 @@ class MainModel {
     }
     
     func fetchNextPage() {
-        guard let nextPageURL = nextPageURL else { return }
-        fetchData(url: nextPageURL)
+        pageNumber += 1
     }
 
     func fetchPreviousPage() {
-        guard let previousPageURL = previousPageURL else { return }
-        fetchData(url: previousPageURL)
+        if pageNumber != 1 {
+            pageNumber -= 1
+        }
     }
     
 }
