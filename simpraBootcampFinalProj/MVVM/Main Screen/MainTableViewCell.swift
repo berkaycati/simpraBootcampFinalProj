@@ -29,17 +29,7 @@ class MainTableViewCell: UITableViewCell {
         
     }
 
-    
-    
-//    func configure(with model: RowItem) {
-//        mainImageView.kf.setImage(with: URL.init(string: model.backgroundImage))
-//        nameLabel.text = model.name ?? "berkuy"
-//        ratingLabel.text = "Rating: \(model.rating)" ?? "Rating is ??"
-//        idLabel.text = "Game id is \(model.id)" ?? "Unknown Id"
-//        releasedLabel.text = "Released Date: \(model.released)"
-//
-//    }
-    
+ 
     func configure(with model: RowItem) {
         mainImageView.kf.setImage(with: URL.init(string: model.backgroundImage))
         nameLabel.text = model.name

@@ -39,14 +39,14 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         let selectedData = items[indexPath.row]
         let detailVC = DetailedViewController()
         if self.navigationController != nil {
-            let detailVC = DetailedViewController()
+//            let detailVC = AddNoteViewController()
 //            detailVC.updateData = { [weak self] data in
 //                let result = Result(id: selectedData.id, name: selectedData.name, released: selectedData.released, backgroundImage: selectedData.backgroundImage, rating: selectedData.rating)
 //                detailVC.updateData(data: result)
-//        }
-        self.navigationController?.pushViewController(detailVC, animated: true)
-    }
-
+//            }
+            self.navigationController?.pushViewController(detailVC, animated: true)
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

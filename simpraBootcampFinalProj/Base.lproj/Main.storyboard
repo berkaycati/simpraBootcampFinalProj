@@ -199,7 +199,7 @@
             </objects>
             <point key="canvasLocation" x="3765" y="-392"/>
         </scene>
-        <!--Main View Controller-->
+        <!--Main Stream-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="MainViewController" modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="MainViewController" customModule="simpraBootcampFinalProj" customModuleProvider="target" sceneMemberID="viewController">
@@ -229,7 +229,7 @@
                             <constraint firstItem="NSM-65-GAO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="yOM-Wm-K5e"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="h7j-em-dGR"/>
+                    <navigationItem key="navigationItem" title="Main Stream" id="h7j-em-dGR"/>
                     <connections>
                         <outlet property="searchBar" destination="ewe-tP-25U" id="ELJ-iV-IZw"/>
                         <outlet property="tableView" destination="NSM-65-GAO" id="BNZ-W8-vdj"/>
@@ -242,7 +242,7 @@
         <!--Notes-->
         <scene sceneID="Zhk-k6-h0E">
             <objects>
-                <viewController id="lPI-6s-KYT" customClass="NotedViewController" customModule="simpraBootcampFinalProj" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NotedViewController" id="lPI-6s-KYT" customClass="NotedViewController" customModule="simpraBootcampFinalProj" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OFM-au-XRF">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -250,6 +250,14 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Trf-5F-Cdc">
                                 <rect key="frame" x="0.0" y="47" width="390" height="714"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" id="WJA-Ep-CfW">
+                                    <rect key="frame" x="0.0" y="0.0" width="390" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="lPI-6s-KYT" id="LVq-TW-cPy"/>
+                                    </connections>
+                                </searchBar>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3ot-GT-uvg"/>
@@ -263,12 +271,13 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Notes" image="note" catalog="system" selectedImage="note.text" id="wWX-5N-mzs"/>
                     <connections>
-                        <outlet property="notedTableView" destination="Trf-5F-Cdc" id="PeV-um-0t9"/>
+                        <outlet property="notedTableView" destination="Trf-5F-Cdc" id="A9Y-FL-bwG"/>
+                        <outlet property="searchBar" destination="WJA-Ep-CfW" id="uvv-SW-M8o"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0ZT-ov-JIV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1002" y="439"/>
+            <point key="canvasLocation" x="1083" y="443"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="901-cd-6nz">

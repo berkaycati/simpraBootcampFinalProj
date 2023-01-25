@@ -11,15 +11,19 @@ class NotedViewController: UIViewController {
     
     @IBOutlet private weak var notedTableView: UITableView!
     
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    
     private let viewModel = NotedViewModel()
     private var tableHelper: NotedTableViewHelper!
     typealias RowItem = MainCellModel
     private var items: [RowItem] = []
-    
+    private var notFilteredData: [MainCellModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
 //        setupTableView()
 //        setItems(items)
 //        viewModel.didViewLoad()
@@ -46,7 +50,10 @@ class NotedViewController: UIViewController {
 //}
 
 extension NotedViewController {
-    
+    func setItems(_ items: [RowItem]) {
+        self.items = items
+        notedTableView?.reloadData()
+    }
 //    private func setupTableView() {
 //        notedTableView?.dataSource = self
 //        notedTableView?.delegate = self
@@ -60,6 +67,7 @@ extension NotedViewController {
     
     private func setupUI() {
         tableHelper = .init(notedTableView: notedTableView, viewModel: viewModel)
+        searchBar.delegate = self
     }
     
     func setupBindings(){
@@ -72,4 +80,22 @@ extension NotedViewController {
             self?.tableHelper.setItems(items)
         }
     }
+}
+
+extension NotedViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        if searchText.isEmpty {
+            setItems(notFilteredData)
+        } else {
+            items = notFilteredData.filter { $0.name.contains(searchText) }
+            notedTableView.reloadData()
+        }
+
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        setItems(notFilteredData)
+    }
+      
 }
