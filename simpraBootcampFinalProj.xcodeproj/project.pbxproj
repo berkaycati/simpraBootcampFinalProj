@@ -13,6 +13,7 @@
 		624B9008297F3F91002218D9 /* AddNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624B9007297F3F91002218D9 /* AddNoteViewController.swift */; };
 		624B900A297F3FC0002218D9 /* AddNoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624B9009297F3FC0002218D9 /* AddNoteModel.swift */; };
 		624B900C297F3FCC002218D9 /* AddNoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624B900B297F3FCC002218D9 /* AddNoteViewModel.swift */; };
+		626AE9132980BF1000B606A8 /* DetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626AE9122980BF1000B606A8 /* DetailedViewController.swift */; };
 		629E3DB0297D8F0500DD5D62 /* DetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629E3DAF297D8F0500DD5D62 /* DetailModel.swift */; };
 		629E3DB2297D91E000DD5D62 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629E3DB1297D91E000DD5D62 /* DetailViewModel.swift */; };
 		62C47B01297AE51A00DC3BE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C47B00297AE51A00DC3BE5 /* AppDelegate.swift */; };
@@ -47,6 +48,7 @@
 		624B9007297F3F91002218D9 /* AddNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewController.swift; sourceTree = "<group>"; };
 		624B9009297F3FC0002218D9 /* AddNoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteModel.swift; sourceTree = "<group>"; };
 		624B900B297F3FCC002218D9 /* AddNoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewModel.swift; sourceTree = "<group>"; };
+		626AE9122980BF1000B606A8 /* DetailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedViewController.swift; sourceTree = "<group>"; };
 		629E3DAF297D8F0500DD5D62 /* DetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
 		629E3DB1297D91E000DD5D62 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		62C47AFD297AE51A00DC3BE5 /* simpraBootcampFinalProj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = simpraBootcampFinalProj.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,6 +152,7 @@
 				629E3DAF297D8F0500DD5D62 /* DetailModel.swift */,
 				629E3DB1297D91E000DD5D62 /* DetailViewModel.swift */,
 				62C84FA9297D8141003CEF97 /* DetailViewController.swift */,
+				626AE9122980BF1000B606A8 /* DetailedViewController.swift */,
 			);
 			path = "Detail Screen";
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 				624B900A297F3FC0002218D9 /* AddNoteModel.swift in Sources */,
 				62C47B37297CB0A800DC3BE5 /* NotedModel.swift in Sources */,
 				62C47B01297AE51A00DC3BE5 /* AppDelegate.swift in Sources */,
+				626AE9132980BF1000B606A8 /* DetailedViewController.swift in Sources */,
 				629E3DB0297D8F0500DD5D62 /* DetailModel.swift in Sources */,
 				62C47B0B297AE51A00DC3BE5 /* simpraBootcampFinalProj.xcdatamodeld in Sources */,
 				62C47B3E297CB12F00DC3BE5 /* NotedTableViewCell.swift in Sources */,

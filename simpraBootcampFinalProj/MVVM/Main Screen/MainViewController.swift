@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MainViewController: UIViewController {
     
@@ -14,44 +15,74 @@ class MainViewController: UIViewController {
     
     private let viewModel = MainViewModel()
     private var tableHelper: MainTableViewHelper!
-
     private var fetchingData : MainModel?
-
-    
     typealias RowItem = MainCellModel
     private var items: [RowItem] = []
     private var notFilteredData: [MainCellModel] = []
-    var filteredData: [String] = []
-    
-    
+    let detailVC = DetailedViewController()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        notFilteredData = items
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.dataSource = self
-        
-
-        tableView.reloadData()
         
         setupUI()
         setupBindings()
         viewModel.didViewLoad()
-        
         fetchingData?.fetchData()
     }
 }
 
 
+extension MainViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedData = items[indexPath.row]
+        let detailVC = DetailedViewController()
+//        detailVC.updateData = { [weak self] data in
+//            let result = Result(id: selectedData.id, name: selectedData.name, released: selectedData.released, backgroundImage: selectedData.backgroundImage, rating: selectedData.rating)
+//                detailVC.updateData(data: result)
+//        }
+        present(detailVC, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return items.count
+    }
+        
+        
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MainTableViewCell") as! MainTableViewCell
+        cell.configure(with: items[indexPath.row])
+        return cell
+    }
+}
 
 
-private extension MainViewController {
+extension MainViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.isEmpty {
+            setItems(notFilteredData)
+        } else {
+            items = notFilteredData.filter { $0.name.contains(searchText) }
+            tableView.reloadData()
+        }
+
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        setItems(notFilteredData)
+    }
+      
+}
+
+extension MainViewController {
     
     private func setupUI() {
-
         tableView.register(.init(nibName: "MainTableViewCell", bundle: nil), forCellReuseIdentifier: "MainTableViewCell")
-        
+        notFilteredData = items
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.dataSource = self
     }
     
     func setItems(_ items: [RowItem]) {
@@ -70,63 +101,27 @@ private extension MainViewController {
         
         viewModel.refreshItem = { [weak self] items in
             self?.setItems(items)
-            print(items)
+            
         }
     }
     
     @objc func refreshData() {
         print("refreshed")
     }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "toDetailedVC" {
+//            if let destinationVC = segue.destination as? DetailedViewController {
+//                let selectedIndex = tableView.indexPathForSelectedRow?.row
+//                let selectedData = items[selectedIndex ?? 0]
+//                destinationVC.imageView.kf.setImage(with: URL(string: selectedData.backgroundImage))
+//                destinationVC.ratingLabel.text = selectedData.rating.description
+//                destinationVC.idLabel.text = selectedData.id.description
+//                destinationVC.releasedLabel.text = selectedData.released
+//                destinationVC.nameLabel.text = selectedData.name
+//            }
+//        }
+//    }
 }
 
-extension MainViewController: UITableViewDelegate {
-    
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        performSegue(withIdentifier: "toDetailVC", sender: nil)
-    }
-}
-    
-    
-extension MainViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
-    }
-        
-        
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MainTableViewCell") as! MainTableViewCell
-        cell.configure(with: items[indexPath.row])
-        return cell
-    }
-        
-}
 
-extension MainViewController {
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toDetailVC" {
-            if let nextViewController = segue.destination as? DetailViewController {
-//                nextViewController.idLabel.text = 
-            }
-        }
-    }
-}
-
-extension MainViewController: UISearchBarDelegate {
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-  
-        if searchText.isEmpty {
-                setItems(notFilteredData)
-            } else {
-                items = notFilteredData.filter { $0.name.contains(searchText) }
-                tableView.reloadData()
-            }
-
-    }
-    
-    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        setItems(notFilteredData)
-    }
-      
-}

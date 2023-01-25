@@ -20,11 +20,14 @@ class MainModel {
     private(set) var data: [Result] = []
     private(set) var databaseData: [Entity] = []
     
+    private var nextPageURL: URL?
+    private var previousPageURL: URL?
+    
     weak var delegate: MainModelProtocol?
     
     let refreshController = UIRefreshControl()
     
-    func fetchData(refresh: Bool = false) {
+    func fetchData(refresh: Bool = false, url: URL? = nil) {
         
         if InternetManager.shared.isInternetActive() {
             
@@ -100,6 +103,16 @@ class MainModel {
             print("ERROR while fetching data from CoreData")
             delegate?.didDataCouldntFetch()
         }
+    }
+    
+    func fetchNextPage() {
+        guard let nextPageURL = nextPageURL else { return }
+        fetchData(url: nextPageURL)
+    }
+
+    func fetchPreviousPage() {
+        guard let previousPageURL = previousPageURL else { return }
+        fetchData(url: previousPageURL)
     }
     
 }

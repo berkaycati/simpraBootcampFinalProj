@@ -43,9 +43,7 @@ class DetailViewController: UIViewController {
         
         if isActive == false {
             hearthButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-            
-            
-            
+
             isActive = true
             
         } else {
