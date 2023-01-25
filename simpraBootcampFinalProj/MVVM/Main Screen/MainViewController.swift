@@ -38,11 +38,15 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedData = items[indexPath.row]
         let detailVC = DetailedViewController()
-//        detailVC.updateData = { [weak self] data in
-//            let result = Result(id: selectedData.id, name: selectedData.name, released: selectedData.released, backgroundImage: selectedData.backgroundImage, rating: selectedData.rating)
+        if self.navigationController != nil {
+            let detailVC = DetailedViewController()
+//            detailVC.updateData = { [weak self] data in
+//                let result = Result(id: selectedData.id, name: selectedData.name, released: selectedData.released, backgroundImage: selectedData.backgroundImage, rating: selectedData.rating)
 //                detailVC.updateData(data: result)
 //        }
-        present(detailVC, animated: true)
+        self.navigationController?.pushViewController(detailVC, animated: true)
+    }
+
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
